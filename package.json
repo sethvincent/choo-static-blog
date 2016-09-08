@@ -1,0 +1,49 @@
+{
+  "name": "choo-static-blog",
+  "version": "0.0.1",
+  "description": "create jekyll-like blogs with choo.",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sethvincent/choo-static-blog.git"
+  },
+  "keywords": [
+    "static site",
+    "jekyll",
+    "yo-yo",
+    "choo"
+  ],
+  "author": "sethvincent",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sethvincent/choo-static-blog/issues"
+  },
+  "homepage": "https://github.com/sethvincent/choo-static-blog#readme",
+  "dependencies": {
+    "async.applyeachseries": "^0.5.2",
+    "bulk-require": "^1.0.0",
+    "choo": "^3.2.0",
+    "create-html": "^1.1.0",
+    "each-async": "^1.1.1",
+    "exit": "^0.1.2",
+    "extend": "^3.0.0",
+    "gray-matter": "^2.0.2",
+    "is-date-object": "^1.0.1",
+    "minimist": "^1.2.0",
+    "mkdirp": "^0.5.1",
+    "parse-filepath": "^1.0.1",
+    "read-directory": "^2.0.0",
+    "rimraf": "^2.5.4",
+    "sheetify": "^5.1.0"
+  },
+  "devDependencies": {
+    "browserify": "^13.1.0",
+    "budo": "^8.3.0",
+    "css-extract": "^1.1.1",
+    "insert-css": "^1.0.0",
+    "standard": "^7.1.2",
+    "tape": "^4.6.0",
+    "tape-run": "^2.1.4"
+  }
+}
