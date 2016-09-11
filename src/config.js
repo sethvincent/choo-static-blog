@@ -4,11 +4,9 @@ module.exports = {
   baseurl: '/',
   collections: {
     posts: {
-      dir: 'posts',
       route: '/posts/:post'
     },
     pages: {
-      dir: 'pages',
       route: '/:page'
     }
   }
