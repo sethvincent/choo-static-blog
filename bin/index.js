@@ -35,7 +35,7 @@ var cwd = process.cwd()
 var source = argv._[0] ? path.resolve(argv._[0]) : cwd
 var config = readConfig(require(source + '/config'))
 config.baseurl = config.baseurl || '/'
-console.log(config)
+
 readFiles(function (err, results) {
   results.config = config
   var app = createApp(results)
@@ -49,6 +49,7 @@ readFiles(function (err, results) {
     layouts: results.layouts,
     data: results.data,
     toString: function toString (route, state) {
+      console.log('route', route)
       return app.toString(route, state)
     },
   })
@@ -71,7 +72,7 @@ function readFiles (callback) {
     var collections = {}
     each(Object.keys(config.collections), function (key, i, next) {
       var collection = config.collections[key]
-      collection.dir = path.join(source, collection.dir)
+      collection.dir = path.join(source, key)
 
       readCollection(collection, function (err, result) {
         collections[key] = extend(result, collection)

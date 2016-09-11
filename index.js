@@ -31,15 +31,14 @@ module.exports = function createApp (options) {
 function getLayout (key, collection, layouts) {
   return function (state, prev, send) {
     var keys = Object.keys(state.params)
+    console.log('state', state.params)
     // this assumes there's only one param
     var namespace = keys[0]
-
-    if (layouts[namespace]) {
-      return layouts[namespace](state, prev, send)
-    }
-
+    
     if (collection.defaultLayout && layouts[collections.default]) {
-      return layouts[collection.default](state, prev, send)
+      return layouts[collection.defaultLayout](state, prev, send)
+    } else if (layouts[namespace]) {
+      return layouts[namespace](state, prev, send)
     }
 
     return layouts.default(state, prev, send)
