@@ -1,6 +1,7 @@
 #! /usr/bin/env node
 
 var fs = require('fs')
+var url = require('url')
 var path = require('path')
 var assert = require('assert')
 var apply = require('async.applyeachseries')
@@ -13,6 +14,7 @@ var rm = require('rimraf')
 var exit = require('exit')
 
 var createApp = require('../index')
+var readConfig = require('../lib/read-config')
 var readData = require('../lib/read-data')
 var readCollection = require('../lib/read-collection')
 var readLayouts = require('../lib/read-layouts')
@@ -31,9 +33,9 @@ var argv = minimist(process.argv.slice(2), {
 
 var cwd = process.cwd()
 var source = argv._[0] ? path.resolve(argv._[0]) : cwd
-var config = require(source + '/config')
+var config = readConfig(require(source + '/config'))
 config.baseurl = config.baseurl || '/'
-
+console.log(config)
 readFiles(function (err, results) {
   results.config = config
   var app = createApp(results)
