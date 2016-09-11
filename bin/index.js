@@ -49,7 +49,6 @@ readFiles(function (err, results) {
     layouts: results.layouts,
     data: results.data,
     toString: function toString (route, state) {
-      console.log('route', route)
       return app.toString(route, state)
     },
   })

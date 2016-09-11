@@ -31,7 +31,7 @@ module.exports = function createApp (options) {
 function getLayout (key, collection, layouts) {
   return function (state, prev, send) {
     var keys = Object.keys(state.params)
-    console.log('state', state.params)
+
     // this assumes there's only one param
     var namespace = keys[0]
     
